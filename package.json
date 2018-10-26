@@ -1,0 +1,20 @@
+{
+  "name": "bs-country-select",
+  "version": "0.0.1",
+  "description": "Country select dropdown with fuzzy search",
+  "scripts": {
+    "start": "npm run bsb:watch",
+    "bsb:build": "bsb -make-world",
+    "bsb:watch": "bsb -make-world -w",
+    "bsb:clean": "bsb -clean-world"
+  },
+  "dependencies": {
+    "bs-css": "^7.2.0",
+    "flag-icon-css": "^3.2.1"
+  },
+  "devDependencies": {
+    "@ahrefs/bs-react-select": "0.0.7",
+    "bs-platform": "^4.0.6",
+    "reason-react": "^0.5.3"
+  }
+}

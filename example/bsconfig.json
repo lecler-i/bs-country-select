@@ -1,0 +1,13 @@
+{
+  "name": "example",
+  "sources": ["src"],
+  "bs-dependencies": ["reason-react", "bs-country-select"],
+  "reason": {
+    "react-jsx": 2
+  },
+  "package-specs": {
+    "module": "commonjs"
+  },
+  "bsc-flags": ["-bs-super-errors"],
+  "refmt": 3
+}

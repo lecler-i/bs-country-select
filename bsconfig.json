@@ -1,0 +1,11 @@
+{
+  "name": "bs-country-select",
+  "sources": ["src"],
+  "namespace": true,
+  "bs-dependencies": ["reason-react", "@ahrefs/bs-react-select", "bs-css"],
+  "reason": {
+    "react-jsx": 2
+  },
+  "bsc-flags": ["-bs-super-errors"],
+  "refmt": 3
+}
