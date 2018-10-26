@@ -10,14 +10,14 @@ let component = ReasonReact.reducerComponent(__MODULE__);
 let make = _children => {
   ...component,
   initialState: () => {selectedCountry: None},
-  reducer: (action, state: state) =>
+  reducer: (action, _: state) =>
     switch (action) {
     | ChangeSelectedCountry(Some(value)) => ReasonReact.Update({ selectedCountry: Some(value) })
     | ChangeSelectedCountry(None) => ReasonReact.Update({ selectedCountry: None})
     },
   render: self =>
     <div>
-      <h2> (ReasonReact.string("LAL a Country")) </h2>
+      <h2> (ReasonReact.string("Countr Select for Ahrefs")) </h2>
       <CountrySelect
         className="custom-class"
         country=?self.state.selectedCountry
