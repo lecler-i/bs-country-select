@@ -26,8 +26,6 @@ global(
 
 let popup = style([width(px(230)), minHeight(px(199))]);
 
-Js.log(popup);
-
 let selectButtonWrapper =
   style([
     border(px(1), solid, rgba(0, 0, 0, 0.2)),
