@@ -4,10 +4,12 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "build": "npm run bsb:build && npm run webpack:build",
+    "webpack:watch": "webpack-dev-server -d --hot",
+    "webpack:build": "webpack-cli -p",
     "bsb:watch": "bsb -make-world -w",
     "bsb:build": "bsb -make-world",
-    "bsb:clean": "bsb -clean-world",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bsb:clean": "bsb -clean-world"
   },
   "author": "",
   "license": "ISC",
