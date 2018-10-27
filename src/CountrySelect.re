@@ -9,7 +9,7 @@ type t = {
   "label": string,
 };
 
-[@bs.module] external countries : array(t) = "../../../src/countries.json";
+[@bs.module] external countries: array(t) = "../../../src/countries.json";
 
 type state = {open_: bool};
 
@@ -20,13 +20,13 @@ type action =
 let component = ReasonReact.reducerComponent(__MODULE__);
 
 let optionRenderer = item =>
-  <div className=Styles.optionRowWrapper>
+  <div className="CountrySelect-row">
     <span
-      className=(
-        Styles.optionFlagIcon ++ " flag-icon flag-icon-" ++ item##value
-      )
+      className={
+        "CountrySelect-row-flag-icon flag-icon flag-icon-" ++ item##value
+      }
     />
-    <span> (item##label |> ReasonReact.string) </span>
+    <span> {item##label |> ReasonReact.string} </span>
   </div>;
 
 let make = (~className="", ~country="", ~onChange=_ => (), _children) => {
@@ -40,26 +40,29 @@ let make = (~className="", ~country="", ~onChange=_ => (), _children) => {
   render: self =>
     <div>
       <button
-        className=Styles.selectButtonWrapper
-        onFocus=(_ => self.send(Open))
-      >
-      {Js.Array.find(item => item##value == country, countries)
-          ->Belt.Option.mapWithDefault("", item => item##label) |> ReasonReact.string}
+        className={"CountrySelect-button" ++ " " ++ className}
+        onFocus={_ => self.send(Open)}>
+        {
+          Js.Array.find(item => item##value == country, countries)
+          ->Belt.Option.mapWithDefault("", item => item##label)
+          |> ReasonReact.string
+        }
       </button>
-        {self.state.open_ ? (
-          <div className=(Styles.popup ++ " " ++ className)>
-            <Select
-              autoFocus=true
-              placeholder=(Str("Search"))
-              openOnFocus=true
-              options=countries
-              onChange
-              optionRenderer
-              arrowRenderer=(_ => ReasonReact.null)
-              value=country->Select.Option.Str
-              onClose=(() => self.send(Close))
-              onFocus=(() => self.send(Open))
-            />
-            </div>) : ReasonReact.null}
-     </div>,
+      {self.state.open_ ?
+         <div className="CountrySelect-popup-wrapper">
+           <Select
+             autoFocus=true
+             placeholder={Str("Search")}
+             openOnFocus=true
+             options=countries
+             onChange
+             optionRenderer
+             arrowRenderer={_ => ReasonReact.null}
+             value={country->Select.Option.Str}
+             onClose={() => self.send(Close)}
+             onFocus={() => self.send(Open)}
+           />
+         </div> :
+         ReasonReact.null}
+    </div>,
 };

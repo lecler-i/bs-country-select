@@ -1,0 +1,38 @@
+.Select.is-open > .Select-control {
+  background-image: url('../assets/search-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 14px;
+  padding-left: 20px;
+}
+
+.Select {
+  margin-top: 3px;
+}
+
+.Select-placeholder, .Select-value {
+  margin-left: 20px;
+}
+
+.CountrySelect-button {
+  background-repeat: no-repeat;
+    background-position: center right 10px;
+    background-image: url('../assets/dropdown-arrow.svg');
+    min-height: 26px;
+    min-width: 119px;
+    text-align: left;
+    border-radius: 3px;
+    padding-left: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.CountrySelect-row {
+  height: 18px;
+}
+
+.CountrySelect-row-flag-icon {
+  margin-right: 8px;
+  width: 14px;
+  height: 18px;
+}
