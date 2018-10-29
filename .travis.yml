@@ -5,18 +5,26 @@ node_js:
   - "8"
 
 cache:
-  yarn: true
+  npm: true
   directories:
     - node_modules
+    - example/node_modules
 
 jobs:
   include:
     - stage: test
-    - stage: deploy
-      provider: pages
-      script: "cd example/ && npm i && npm run build"
-      skip-cleanup: true
-      github-token: $GITHUB_TOKEN 
-      local-dir: "example/dist/"
-      on:
-        branch: master
+      install: "npm install"
+    - stage: deploy-example
+      env:
+        - ASSET_PATH="/bs-country-select/"
+      before_install: "npm install && cd example/"
+      install: "npm install"
+      script: "npm run build"
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN 
+        local-dir: "example/dist/"
+        on:
+          branch: master      
+

@@ -4,13 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractCssChunks = require("extract-css-chunks-webpack-plugin");
 
 const appDirectory = path.resolve(__dirname);
+const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 module.exports = {
   entry: path.resolve(appDirectory, 'lib/js/src/index.js'),
   output: {
     filename: 'bundle.web.js',
     path: path.resolve(appDirectory, 'dist'),
-    publicPath: '/',
+    publicPath: ASSET_PATH,
   },
   devServer: {
     port: 3000,
