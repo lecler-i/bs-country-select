@@ -1,0 +1,59 @@
+.Select.is-open > .Select-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' width='14' height='14'%3E %3Cstyle%3E tspan %7B white-space:pre %7D .shp0 %7B fill: %23333333 %7D %3C/style%3E %3Cpath id='icon' class='shp0' d='M13.47,12.06l-1.41,1.41l-3.3,-3.3c-0.79,0.52 -1.74,0.83 -2.76,0.83c-2.76,0 -5,-2.24 -5,-5c0,-2.76 2.24,-5 5,-5c2.76,0 5,2.24 5,5c0,1.02 -0.3,1.97 -0.83,2.76zM6,9.2c1.77,0 3.2,-1.43 3.2,-3.2c0,-1.77 -1.43,-3.2 -3.2,-3.2c-1.77,0 -3.2,1.43 -3.2,3.2c0,1.77 1.43,3.2 3.2,3.2z' /%3E %3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 14px;
+  padding-left: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.Select-menu-outer {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.Select {
+  margin-top: 1px;
+}
+
+.Select-placeholder, .Select-value {
+  margin-left: 20px;
+}
+
+.Select-menu {
+  max-height: 136px;
+}
+
+.Select-option {
+  min-height: 18px;
+  padding: 4px 10px;
+}
+
+.CountrySelect-button {
+  background-repeat: no-repeat;
+    background-position: center right 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='5' viewBox='0 0 8 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0H8L4 5L0 0Z' fill='%23333333'/%3E %3C/svg%3E");
+    min-height: 26px;
+    min-width: 119px;
+    text-align: left;
+    border-radius: 3px;
+    padding-left: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.CountrySelect-popup-wrapper {
+  width: 230px;
+}
+
+.CountrySelect-row-flag-icon {
+  margin-right: 8px;
+  width: 14px;
+  height: 18px;
+}
+
+
+/*# sourceMappingURL=main.css.map*/
