@@ -9,7 +9,8 @@ const ASSET_PATH = process.env.ASSET_PATH || '/';
 module.exports = {
   entry: path.resolve(appDirectory, 'lib/js/src/index.js'),
   output: {
-    filename: 'bundle.web.js',
+    chunkFilename: "[name].[chunkhash:4].js",
+    filename: "[name].[chunkhash:4].js",
     path: path.resolve(appDirectory, 'dist'),
     publicPath: ASSET_PATH,
   },
@@ -36,6 +37,9 @@ module.exports = {
     }],
   },
   optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
     nodeEnv: 'production',
     minimize: true,
   },
@@ -46,7 +50,7 @@ module.exports = {
     }),
     new ExtractCssChunks({
         filename: "[name].css",
-        chunkFilename: "[id].css",
+        chunkFilename: "[name].[contenthash].css",
         hot: true
     }),
     new HtmlWebpackPlugin({
