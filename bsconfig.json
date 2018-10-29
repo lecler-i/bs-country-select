@@ -2,7 +2,7 @@
   "name": "bs-country-select",
   "sources": ["src"],
   "namespace": true,
-  "bs-dependencies": ["reason-react", "@ahrefs/bs-react-select", "bs-css"],
+  "bs-dependencies": ["reason-react", "@ahrefs/bs-react-select"],
   "reason": {
     "react-jsx": 2
   },
