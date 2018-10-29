@@ -25,7 +25,7 @@ let make = _children => {
       <h2> {ReasonReact.string("Country Select for Ahrefs")} </h2>
       <input className=inputStyle />
       <CountrySelect
-        className=countrySelectCustomStyle
+        /* className=countrySelectCustomStyle */
         country=?{self.state.selectedCountry}
         onChange={country =>
           self.send(

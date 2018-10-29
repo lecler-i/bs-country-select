@@ -19,14 +19,12 @@ module.exports = {
   },
   devtool: 'source-map',
   module: {
-    rules: [
-    {
-      test: /\.(gif|jpe?g|png|svg)$/,
-      use: {
-        loader: 'url-loader',
-        options: {
-          name: '[name].[ext]',
-        },
+    rules: [{
+      test: /\.svg$/,
+      loader: 'svg-url-loader',
+      options: {
+        limit: 10 * 1024,
+        noquotes: true,
       },
     },
     {
@@ -37,18 +35,7 @@ module.exports = {
       ]
     }],
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'initial',
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor'
-        }
-      }
-    }
-  },
-  
+    
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
