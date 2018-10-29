@@ -1,0 +1,22 @@
+sudo: false
+
+language: node_js
+node_js:
+  - "8"
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+jobs:
+  include:
+    - stage: test
+    - stage: deploy
+      provider: pages
+      script: "cd example/ && npm i && npm run build"
+      skip-cleanup: true
+      github-token: $GITHUB_TOKEN 
+      local-dir: "example/dist/"
+      on:
+        branch: master
